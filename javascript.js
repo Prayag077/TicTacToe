@@ -18,6 +18,8 @@ const winPattern = [
 ];
 
 const resetGame = () =>{
+    const tapSound = new Audio('https://www.myinstants.com/media/sounds/clicksoundeffect.mp3');
+        tapSound.play();
     turnO = true;
     enableBoxes();
     msgContainer.classList.add("hide");
@@ -27,7 +29,8 @@ const resetGame = () =>{
 boxes.forEach( (box)=>{
 
     box.addEventListener("click",()=> {
-       
+       const tapSound = new Audio('https://www.myinstants.com/media/sounds/clicksoundeffect.mp3');
+        tapSound.play();
 
         if (turnO) {
             box.innerText = "O";
@@ -56,9 +59,18 @@ const enableBoxes = () => {
 }
 
 const showWinner = (winner) => {
+    
     disableBoxes();
-    msg.innerText = `Congratulations winner is ${winner}`;
-    msgContainer.classList.remove("hide"); 
+    msg.innerText = `Congratulations winner is  ${winner}`;
+    msgContainer.classList.remove("hide");
+
+    const yaySound = new Audio('https://www.myinstants.com/media/sounds/anime-wow-sound-effect.mp3');
+    yaySound.play();
+    confetti({
+    particleCount: 150,
+    spread: 100,
+    origin: { y: 0.6 }
+});
 }
 
 const checkWinner = () => {
