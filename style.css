@@ -1,85 +1,110 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#title{
-    padding: 3rem;
-    font-size: 2rem;
-   
-    color: #42033D;
+body {
+  background-color: #FFB7FF;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 1rem;
 }
 
-body{
-    background-color: #FFB7FF;
-    text-align: center;
+#title {
+  font-size: 6vw;
+  color: #42033D;
+  margin-bottom: 2rem;
 }
 
-.container{
-    height: 70vh;
-    justify-content: center;
-    align-items: center;
-    display: flex;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.game{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    height: 60vmin;
-    width: 60vmin;
-    gap: 1.5vmin;
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 90vmin;
+  max-width: 400px;
 }
 
-.box{
-    height: 18vmin;
-    width: 18vmin;
-    border-radius: 1rem;
-    border: none;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-    font-size: 8vmin;
-    color: #C879FF;
-    cursor: pointer;
-    background-color: white;
-    
+.box {
+  aspect-ratio: 1 / 1;
+  font-size: 8vmin;
+  color: #C879FF;
+  background-color: white;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.resetButton{
-
-    padding: 1rem;
-    font-size: 1.25rem;
-    border: none;
-    border-radius: 1rem;
-    color: #42033D;
-    background-color:#826AED ;
-    cursor: pointer;
+.box:hover {
+  background-color: #f2e7fe;
 }
 
-#new-btn{
-    padding: 1rem;
-    font-size: 1.25rem;
-    border: none;
-    border-radius: 1rem;
-    color: #2B061E;
-    background-color:#D2BF55 ;
-    cursor: pointer;
-
+.resetButton,
+#new-btn {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
 }
 
-#msg{
-    font-size: 5rem;
-    color: #42033D;
+.resetButton {
+  background-color: #826AED;
+  color: #ffffff;
 }
 
-.msg-container{
-    height: 50vmin;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+#new-btn {
+
+  background-color: #D2BF55;
+  color: #2B061E;
+  margin: 2rem;
 }
 
+#msg {
+  font-size: 6vw;
+  color: #42033D;
+  margin-bottom: 1rem;
+}
+
+.msg-container {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* .hide class to hide elements */
 .hide {
-    display: none;
+  display: none !important;
+}
+
+/* Media queries for small devices */
+@media (max-width: 600px) {
+  #title {
+    font-size: 9vw;
+  }
+
+  #msg {
+    font-size: 10vw;
+  }
+
+  .box {
+    font-size: 12vw;
+  }
+
+  .resetButton,
+  #new-btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
 }
